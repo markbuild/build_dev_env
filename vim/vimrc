@@ -3,6 +3,8 @@
 
 set fencs=utf-8,gbk,utf-16,utf-32,ucs-bom
 set nu
+" windows clipboard sperate
+set clipboard=
 
 " Display emoji font normally
 set guifont=Symbola\ 12
@@ -118,3 +120,8 @@ autocmd InsertEnter * exec ":source ~/code/git/build_dev_env/vim/vimrc2"
 
 " Uniq for vimword
 :command Uniq %s/^\(.*\)\n\1$/\1/ 
+
+nnoremap <F3> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hlsearch<CR>
+nnoremap ,n :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hlsearch<CR>
+nnoremap <F12> :execute "tabedit" expand("%:p:h") . "/" . expand("<cfile>:p")<CR>
+nnoremap ,o :execute "tabedit" expand("%:p:h") . "/" . expand("<cfile>:p")<CR>
