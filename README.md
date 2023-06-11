@@ -1,6 +1,6 @@
 # deploy
 
-## Mac
+## 1. Mac
 
 ### shell
 - zsh
@@ -173,7 +173,7 @@ ssl nginx.conf
 
     rm `which deno`
 
-## Windows
+## 2. Windows
 
 ### gitbash/msys2 + tmux
 使用 tmux: 主要是为了解决 windows下 gitbash/msys2 不支持多 tab，而产生切换麻烦的多窗口
@@ -190,7 +190,7 @@ ssl nginx.conf
 - bash
 - .bashrc
 
-## iPhone
+## 3. iPhone
 iSH
 [口袋键盘](https://markbuild.com/zh/tag/口袋键盘/)
 
@@ -198,11 +198,11 @@ iSH
 - ash
 - ~/.profile
 
-## 其它
+## 4. Common
 ### WorkDir
 
     ~/
-    |__ code (github + gitee 双备份)
+    |__ code (github + gitee 双origin)
     |   |__ git
     |
     |__ Desktop
@@ -212,7 +212,7 @@ iSH
     |   |__ chrome/  这个是存放cors
     |   |__ mscp
     |
-    |__ timeline (备份 USB)
+    |__ timeline (backup to USB Flash Drives)
 
 作为快10年的vim用户，我不会接受 vscode+vim, 但我会使用一段时间，并把它好的功能借鉴转变到vimrc中，一个工具不可能各方面都胜过另一个工具，我只需以最少的扩展代码满足80%使用频率的20%对象。之前做Flashvim 面对快捷键冲突问题总想着去解决，其实没必要，那种频率比较少，可以放弃满足而减少代码 - [上午7:57 · 2023年6月7日(https://twitter.com/markbuild2022/status/1666232861253595136)
 
