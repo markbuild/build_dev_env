@@ -188,6 +188,10 @@ ssl nginx.conf
 
 ![Tmux On Windows](resource/tmux_on_win.webp)
 
+Theme: flat-ui
+
+截图快捷键: <kbd>⊞</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>
+
 ### shell
 - bash
 - .bashrc
