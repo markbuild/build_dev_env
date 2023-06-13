@@ -181,10 +181,12 @@ ssl nginx.conf
 - https://ftp.acc.umu.se/mirror/cygwin/x86_64/release/tmux/
 - https://ftp.acc.umu.se/mirror/cygwin/x86_64/release/libevent/
 
-[直接下载](https://markbuild.com/wp-content/deploy/tmuxBinaryFromMsys2.zip)
+[直接下载](https://github.com/markbuild/build_dev_env/blob/main/resource/tmuxBinaryFromMsys2.zip)
 
 - [选项1] 拷贝 tmux.exe 和 以 msys-event 开头的几个文件到 C:\Program Files\Git\user\bin
 - [选项2] 拷贝 tmux.exe 和 以 msys-event 开头的几个文件到  C:\msys64\user\bin
+
+![Tmux On Windows](resource/tmux_on_win.webp)
 
 ### shell
 - bash
