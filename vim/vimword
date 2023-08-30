@@ -18,6 +18,7 @@ background
 block
 catch
 class
+clearTimeout
 console
 const
 constructor
@@ -30,8 +31,10 @@ eval
 explode
 extends
 fetch
+filter
 from
 function
+getElementById
 getFullYear
 implements
 implode
@@ -76,3 +79,4 @@ toUpperCase
 undefined
 window
 write
+placeholder
