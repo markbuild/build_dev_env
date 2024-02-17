@@ -104,15 +104,6 @@ iabbrev dow. <C-R>=strftime("%A")<CR>
 " Tigger when changed to insert Mode
 autocmd InsertEnter * exec ":source ~/code/git/build_dev_env/vim/vimrc2"
 
-" Open the file
-:command Op !open %
-
-" Open the directory include current tab file
-:command Opd !open %:h
-
-" Change to the directory include current tab file
-:command Cd cd %:h
-
 :command Gpl !cd %:h;git pull
 
 " Sync file to markbuild 
@@ -122,12 +113,12 @@ autocmd InsertEnter * exec ":source ~/code/git/build_dev_env/vim/vimrc2"
 :command Uniq %s/^\(.*\)\n\1$/\1/ 
 
 " search current word
-nnoremap <F3> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hlsearch<CR>
 nnoremap ,n :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hlsearch<CR>
 
 " open import
-nnoremap <F12> :execute "tabedit" expand("%:p:h") . "/" . expand("<cfile>:p")<CR>
-nnoremap ,o :execute "tabedit" expand("%:p:h") . "/" . expand("<cfile>:p")<CR>
+nnoremap ,O :execute "tabedit" expand("%:p:h") . "/" . expand("<cfile>:p")<CR>
+
+nnoremap ,o :!open %<CR><CR>
 
 " disable c-w-w
 nnoremap <C-W><C-W> <Nop>
