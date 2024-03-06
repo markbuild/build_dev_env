@@ -122,6 +122,7 @@ nnoremap ,o :!open %<CR><CR>
 nnoremap ,r :source ~/.vimrc<CR>
 nnoremap ,b :cd %:h<CR>:let cmd=":r!git blame -L ".line('.').",".line('.')." -el %:t"<CR>:execute cmd<CR>
 nnoremap ,l :cd %:h<CR>:let cmd=":r!git log -L ".line('.').",".line('.').":%:t"<CR>:execute cmd<CR>
+:map ,y "+y
 
 " disable c-w-w
 nnoremap <C-W><C-W> <Nop>
