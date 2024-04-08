@@ -126,3 +126,4 @@ nnoremap ,l :cd %:h<CR>:let cmd=":r!git log -L ".line('.').",".line('.').":%:t"<
 
 " disable c-w-w
 nnoremap <C-W><C-W> <Nop>
+nnoremap <C-z> <Nop> " stop C-z exit vim without save
