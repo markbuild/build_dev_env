@@ -94,7 +94,7 @@ augroup CursorLineOnlyInActiveWindow
 augroup END
 
 " Disable syntax highlighting to improve performance
-syntax off
+syntax on
 
 iabbrev datetime. <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
 iabbrev date. <C-R>=strftime("%Y-%m-%d")<CR>
@@ -122,6 +122,7 @@ nnoremap ,o :!open %<CR><CR>
 nnoremap ,r :source ~/.vimrc<CR>
 nnoremap ,b :cd %:h<CR>:let cmd=":r!git blame -L ".line('.').",".line('.')." -el %:t"<CR>:execute cmd<CR>
 nnoremap ,l :cd %:h<CR>:let cmd=":r!git log -L ".line('.').",".line('.').":%:t"<CR>:execute cmd<CR>
+nnoremap ,p :set paste<CR>"+p:set nopaste<CR>
 :map ,y "+y
 
 " disable c-w-w
