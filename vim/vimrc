@@ -6,14 +6,17 @@ set nu
 " windows clipboard sperate
 set clipboard=
 
-" Display emoji font normally
-set guifont=Symbola\ 12
+set colorcolumn=120 " limited to 120 characters per line
+:highlight ColorColumn ctermbg=Red ctermfg=Yellow
 
 " Set indent
 set smartindent
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-set hlsearch 
 autocmd BufNewFile,BufRead *.vue,*.js,*.html,*.ts,*.css,*.json set tabstop=2 softtabstop=2 shiftwidth=2
+
+" Set Search
+set hlsearch
+set incsearch " Real-Time Search Highlighting
 
 " Set completeopt
 set dictionary+=~/code/git/build_dev_env/vim/vimword,~/code/git/build_dev_env/vim/vimwordphp
@@ -87,11 +90,13 @@ if exists("+showtabline")
     highlight link TabNum Special
 endif
 
+" why ? for vsp
 augroup CursorLineOnlyInActiveWindow
   autocmd!
-  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  autocmd WinLeave * setlocal nocursorline
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline cursorcolumn
+  autocmd WinLeave * setlocal nocursorline nocursorcolumn
 augroup END
+highlight cursorcolumn cterm=NONE ctermbg=black ctermfg=NONE
 
 " Disable syntax highlighting to improve performance
 syntax on
@@ -119,6 +124,7 @@ nnoremap ,n :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hlsearch<CR>
 nnoremap ,O :execute "tabedit" expand("%:p:h") . "/" . expand("<cfile>:p")<CR>
 
 nnoremap ,o :!open %<CR><CR>
+nnoremap ,u :!open <cfile><CR><CR>
 nnoremap ,r :source ~/.vimrc<CR>
 nnoremap ,b :cd %:h<CR>:let cmd=":r!git blame -L ".line('.').",".line('.')." -el %:t"<CR>:execute cmd<CR>
 nnoremap ,l :cd %:h<CR>:let cmd=":r!git log -L ".line('.').",".line('.').":%:t"<CR>:execute cmd<CR>
@@ -127,4 +133,6 @@ nnoremap ,p :set paste<CR>"+p:set nopaste<CR>
 
 " disable c-w-w
 nnoremap <C-W><C-W> <Nop>
+nnoremap <C-h> <C-w><C-h>
+nnoremap <C-l> <C-w><C-l>
 nnoremap <C-z> <Nop> " stop C-z exit vim without save
