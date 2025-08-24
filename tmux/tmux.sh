@@ -9,3 +9,4 @@ tmux send-keys -t mkSession 'git status' C-m
 tmux attach -t mkSession
 
 #tmux kill-session -t mkSession
+rm -rf ~/.vim/swap/*

@@ -1,0 +1,19 @@
+{
+    "workbench.colorTheme": "Default High Contrast",
+    "workbench.colorCustomizations": {
+        "editorCursor.foreground": "#1ff10b", // 绿色光标闪烁
+        "editorRuler.foreground": "#ff0000", // 120字符红色标尺
+        "editor.findMatchBackground": "#9c0a0a",
+        "editor.findMatchHighlightBackground": "#14840a"
+    },
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "security.workspace.trust.untrustedFiles": "open",
+    "git.openRepositoryInParentFolders": "never",
+    "editor.rulers": [120], // 限宽120字符
+    "vim.vimrc.enable": true,
+    "vim.hlsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.commands": {
+        "e!": "workbench.action.files.revert" // 重新加载文件 :e!命令
+    }
+}

@@ -1,0 +1,92 @@
+{
+	"Print to console": {
+		"scope": "javascript,typescript",
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	},
+	"html template": {
+		"prefix": "html",
+		"body": [
+			"<!DOCTYPE html>",
+			"<html>",
+			"<head>",
+			"<meta charset=\"UTF-8\">",
+			"<meta name=\"description\" content=\"\">",
+			"<meta name=\"viewport\" content=\"width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no\">",
+			"<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">",
+			"<meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black-translucent\">",
+			"<meta name=\"apple-touch-fullscreen\" content=\"yes\">",
+			"<meta name=\"format-detection\" content=\"telephone=no, address=no\">",
+			"<link rel=\"icon\" href=\"../images/favicon-128.webp\" />",
+			"<link rel=\"apple-touch-icon\" href=\"../images/favicon-128.webp\" />",
+			"<link rel=\"stylesheet\" type=\"text/css\" href=\"../stylesheets/common.css\">",
+			"<title>${1:${TM_FILENAME_BASE}}</title>",
+			"<style>",
+			"</style>",
+			"</head>",
+			"<body>",
+			"    $2",
+			"<div class=\"copy\">Copyright &copy; 2025-<script>document.write(new Date().getFullYear())</script> <a href=\"https://markbuild.com/\" target=\"_blank\">markbuild</a></div>",
+			"</body>",
+			"<script>",
+			"</script>",
+			"</html>"
+		],
+		"description": "Insert custom HTML template"
+	},
+	// ...existing code...
+	"vue template": {
+		"prefix": "tem",
+		"body": [
+			"<template>",
+			"  <div class=\"${TM_FILENAME_BASE}\">",
+			"	$1",
+			"  </div>",
+			"</template>"
+		],
+		"description": "Insert vue template = vue snippets"
+	},
+	"vue script": {
+		"prefix": "scr",
+		"body": [
+			"<script setup lang=\"ts\">",
+			"import { ref } from 'vue';",
+			"",
+			"const $1 = ref();",
+			"</script>"
+		],
+		"description": "Insert vue script = vue snippets"
+	},
+	"vue style": {
+		"prefix": "sty",
+		"body": [
+			"<style lang=\"less\" scoped>",
+			".${TM_FILENAME_BASE} {",
+			"  $1",
+			"}",
+			"</style>"
+		],
+		"description": "Insert vue style = vue snippets"
+	},
+	"vue emit": {
+		"prefix": "emit",
+		"body": [
+			// 修复下面代码的错误，要求变量名为 $emits
+			"const $$emits = defineEmits(['$1']);"
+		],
+		"description": "Insert vue $emit = vue sinppets"
+	},
+	"vue props": {
+		"prefix": "props",
+		"body": [
+			"const $$props = defineProps({",
+			"  $1: { type: $2, default: $3 },",
+			"});"
+		],
+		"description": "Insert vue props = vue snippets"
+	}
+}

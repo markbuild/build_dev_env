@@ -22,6 +22,9 @@ set incsearch " Real-Time Search Highlighting
 set dictionary+=~/code/git/build_dev_env/vim/vimword,~/code/git/build_dev_env/vim/vimwordphp
 set complete+=k
 
+" Specify the list of storage paths for Vim to generate swap files; if .swp has a name conflict, it becomes .swo, then .swn, then .swm, and then .swl
+set directory=~/.vim/swap/
+
 " Set statusline
 set laststatus=2
 hi User1 ctermfg=white ctermbg=darkred cterm=bold
@@ -102,13 +105,20 @@ highlight cursorline cterm=underline ctermbg=NONE ctermfg=GREEN
 " Disable syntax highlighting to improve performance
 syntax on
 
-iabbrev datetime. <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
-iabbrev date. <C-R>=strftime("%Y-%m-%d")<CR>
-" day of week
-iabbrev dow. <C-R>=strftime("%A")<CR>
+augroup variable
+  autocmd!
+  iabbrev <buffer><silent> time. <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
+  iabbrev <buffer><silent> date. <C-R>=strftime("%Y-%m-%d")<CR>
+  " day of week
+  iabbrev dow. <C-R>=strftime("%A")<CR>
+augroup END
 
-" Tigger when changed to insert Mode
-autocmd InsertEnter * exec ":source ~/code/git/build_dev_env/vim/vimrc2"
+augroup html_snippets
+  autocmd!
+  autocmd FileType html iabbrev html. <!DOCTYPE html><CR><html><CR><head><CR><meta charset="UTF-8"><CR><meta name="description" content=""><CR><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><CR><meta name="apple-mobile-web-app-capable" content="yes"><CR><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><CR><meta name="apple-touch-fullscreen" content="yes"><CR><meta name="format-detection" content="telephone=no, address=no"><CR><link rel="icon" href="../images/favicon-128.webp" /><CR><link rel="apple-touch-icon" href="../images/favicon-128.webp" /><CR><link rel="stylesheet" type="text/css" href="../stylesheets/common.css"><CR><title><C-R>=substitute(expand('%:t'), '\.html$', '', '')<CR></title><CR><style><CR></style><CR></head><CR><body><CR><div class="copy">Copyright &copy; <C-R>=strftime("%Y")<CR>-<script>document.write(new Date().getFullYear())</script> <a href="https://markbuild.com/" target="_blank">markbuild</a></div><CR></body><CR><script><CR></script><CR></html>
+  autocmd FileType html iabbrev nofavicon. <link rel="icon" href="data:,">
+  autocmd FileType html iabbrev noindex. <meta name="robots" content="noindex">
+augroup END
 
 :command Gpl !cd %:h;git pull
 
@@ -127,6 +137,9 @@ nnoremap ,n :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hlsearch<CR>
 nnoremap ,O :execute "tabedit" expand("%:p:h") . "/" . expand("<cfile>:p")<CR>
 
 nnoremap ,o :!open %<CR><CR>
+" 让,v w使用vscode中打开当前文件
+nnoremap ,v :!code %<CR><CR>
+
 nnoremap ,u :!open <cfile><CR><CR>
 nnoremap ,r :source ~/.vimrc<CR>
 nnoremap ,b :cd %:h<CR>:let cmd=":r!git blame -L ".line('.').",".line('.')." -el %:t"<CR>:execute cmd<CR>
