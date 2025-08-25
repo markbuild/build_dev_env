@@ -4,7 +4,7 @@
 set fencs=utf-8,gbk,utf-16,utf-32,ucs-bom
 set nu
 " windows clipboard sperate
-set clipboard=
+set clipboard=unnamed
 
 set colorcolumn=120 " limited to 120 characters per line
 :highlight ColorColumn ctermbg=Red ctermfg=Yellow
@@ -137,15 +137,16 @@ nnoremap ,n :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hlsearch<CR>
 nnoremap ,O :execute "tabedit" expand("%:p:h") . "/" . expand("<cfile>:p")<CR>
 
 nnoremap ,o :!open %<CR><CR>
-" 让,v w使用vscode中打开当前文件
+" ,v use vscode open current file
 nnoremap ,v :!code %<CR><CR>
+" nnoremap ,v :!start ~/code.lnk <C-r>=expand('%:p')<CR><CR>
 
 nnoremap ,u :!open <cfile><CR><CR>
 nnoremap ,r :source ~/.vimrc<CR>
 nnoremap ,b :cd %:h<CR>:let cmd=":r!git blame -L ".line('.').",".line('.')." -el %:t"<CR>:execute cmd<CR>
 nnoremap ,l :cd %:h<CR>:let cmd=":r!git log -L ".line('.').",".line('.').":%:t"<CR>:execute cmd<CR>
-nnoremap ,p :set paste<CR>"+p:set nopaste<CR>
-:map ,y "+y
+" nnoremap ,p :set paste<CR>"+p:set nopaste<CR>
+" :map ,y "+y
 
 " disable c-w-w
 nnoremap <C-W><C-W> <Nop>
