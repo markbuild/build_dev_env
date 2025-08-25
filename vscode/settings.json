@@ -4,7 +4,7 @@
         "editorCursor.foreground": "#1ff10b", // 绿色光标闪烁
         "editorRuler.foreground": "#ff0000", // 120字符红色标尺
         "editor.findMatchBackground": "#9c0a0a",
-        "editor.findMatchHighlightBackground": "#14840a"
+        "editor.findMatchHighlightBackground": "#14840a88"
     },
     "python.defaultInterpreterPath": "/usr/bin/python3",
     "security.workspace.trust.untrustedFiles": "open",
