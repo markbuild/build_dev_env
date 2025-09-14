@@ -13,16 +13,16 @@ for branch in $branches
   do 
     # 无需检查的分支
     if [[ "$branch" =~ ^(test|origin/test)$ ]]; then
-      contine
+      continue
     fi
    
     # 检查分支是否已合并到main
     if git merge-base --is-ancestor $branch origin/main; then
       echo " ✓ $branch: 已合并"
     else
-      echo -e "\033[41m ✗ $branch: 未合并\033[0m"
+      echo -e "\033[41m ✗ $branch: 未合并 \033[0m"
     fi
   done
 
 echo "====================================================="
-echo -e "检查完成 请核对是否有分支\033[43m漏合入\033[0m"
+echo "检查完成 请核对是否有分支\033[30;43m 漏合入 \033[0m"
