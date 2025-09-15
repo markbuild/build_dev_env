@@ -1,5 +1,7 @@
 " ln -s /app/script/conf/vimrc /home/centos/.vimrc
+" ln -s /root/code/git/build_dev_env/vim/vimrc /root/.vimrc
 " ln -s /Users/mk/code/git/build_dev_env/vim/vimrc /Users/mk/.vimrc
+" mkdir ~/.vim/swap/
 
 set fencs=utf-8,gbk,utf-16,utf-32,ucs-bom
 set nu
