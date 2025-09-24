@@ -21,7 +21,7 @@ set hlsearch
 set incsearch " Real-Time Search Highlighting
 
 " Set completeopt
-set dictionary+=~/code/git/build_dev_env/vim/vimword,~/code/git/build_dev_env/vim/vimwordphp
+"set dictionary+=~/code/git/build_dev_env/vim/vimword,~/code/git/build_dev_env/vim/vimwordphp
 set complete+=k
 
 " Specify the list of storage paths for Vim to generate swap files; if .swp has a name conflict, it becomes .swo, then .swn, then .swm, and then .swl
