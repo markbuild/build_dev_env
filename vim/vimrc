@@ -9,8 +9,8 @@ set nu
 set clipboard=unnamed
 
 set colorcolumn=120 " limited to 120 characters per line
-:highlight ColorColumn ctermbg=Red ctermfg=Yellow
-:highlight VertSplit ctermbg=Yellow ctermfg=DarkYellow
+highlight ColorColumn ctermbg=Red ctermfg=white
+highlight VertSplit ctermbg=gray ctermfg=gray
 
 " Set indent
 set smartindent
@@ -19,6 +19,8 @@ set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 " Set Search
 set hlsearch
 set incsearch " Real-Time Search Highlighting
+highlight search ctermfg=black ctermbg=yellow
+highlight incsearch ctermfg=white ctermbg=darkred
 
 " Set completeopt
 "set dictionary+=~/code/git/build_dev_env/vim/vimword,~/code/git/build_dev_env/vim/vimwordphp
@@ -102,7 +104,8 @@ augroup CursorLineOnlyInActiveWindow
   autocmd WinLeave * setlocal nocursorline nocursorcolumn
 augroup END
 highlight cursorcolumn cterm=reverse ctermbg=NONE ctermfg=GREEN
-highlight cursorline cterm=underline ctermbg=NONE ctermfg=GREEN
+highlight cursorline ctermbg=green ctermfg=black
+highlight CursorLineNr ctermbg=green ctermfg=black
 
 " Disable syntax highlighting to improve performance
 syntax on
