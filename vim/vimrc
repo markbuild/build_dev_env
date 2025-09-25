@@ -108,14 +108,14 @@ highlight cursorline ctermbg=green ctermfg=black
 highlight CursorLineNr ctermbg=green ctermfg=black
 
 " Disable syntax highlighting to improve performance
-syntax on
+syntax off
 
 augroup variable
   autocmd!
   iabbrev <buffer><silent> time. <C-R>=strftime("%Y-%m-%d %H:%M:%S")<CR>
   iabbrev <buffer><silent> date. <C-R>=strftime("%Y-%m-%d")<CR>
   " day of week
-  iabbrev dow. <C-R>=strftime("%A")<CR>
+  iabbrev <buffer><silent> dow. <C-R>=strftime("%A")<CR>
 augroup END
 
 augroup html_snippets
@@ -132,14 +132,14 @@ augroup END
 
 " Uniq for vimword
 :command Uniq %s/^\(.*\)\n\1$/\1/ 
-command! Wd windo diffthis
-command! Wo windo diffoff
+command! Wd :windo diffthis
+command! Wo :windo diffoff
 
 " search current word
 nnoremap ,n :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hlsearch<CR>
 
 " open import
-nnoremap ,O :execute "tabedit" expand("%:p:h") . "/" . expand("<cfile>:p")<CR>
+nnoremap ,O :execute "tabedit" expand("%:p:h") . "/" . expand("<cfile>") . "*"<CR>
 
 nnoremap ,o :!open %<CR><CR>
 " ,v use vscode open current file
