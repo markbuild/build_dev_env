@@ -103,8 +103,8 @@ augroup CursorLineOnlyInActiveWindow
   autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline cursorcolumn
   autocmd WinLeave * setlocal nocursorline nocursorcolumn
 augroup END
-highlight cursorcolumn cterm=reverse ctermbg=NONE ctermfg=GREEN
-highlight cursorline ctermbg=green ctermfg=black
+highlight cursorcolumn cterm=none ctermbg=none ctermfg=none
+highlight cursorline cterm=none ctermbg=none ctermfg=none
 highlight CursorLineNr ctermbg=green ctermfg=black
 
 " Disable syntax highlighting to improve performance
