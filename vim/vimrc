@@ -135,6 +135,14 @@ augroup unicodeTableMaker
   iabbrev <buffer><silent> tbcb. ─┴─ 
   iabbrev <buffer><silent> tbrb. ─┘
   iabbrev <buffer><silent> tbrbr. ─╯ 
+  iabbrev <buffer><silent> tbal. ◀─
+  iabbrev <buffer><silent> tbar. ─▶
+  iabbrev <buffer><silent> tbau. ⧋
+  iabbrev <buffer><silent> tbad. ⧩
+  iabbrev <buffer><silent> tbco. ☑
+  iabbrev <buffer><silent> tbem. □
+  iabbrev <buffer><silent> tber. ☒
+augroup END
 augroup END
 
 augroup html_snippets
