@@ -14,6 +14,18 @@ return
 !l::Send, {Right}
 return
 
+; Alt-u 映射为点击鼠标左键
+!u::Click
+return
+
+; Alt-o 映射为点击鼠标右键
+!o::Click, right
+return
+
+; Alt-i 映射为F12
+!i::Send {F12}
+return
+
 ; ============ 鼠标控制（WASD） ============ 
 ; 按下 Alt + W/A/S/D 控制鼠标移动方向
 ; 支持加速，松开键停止
