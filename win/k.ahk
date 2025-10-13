@@ -30,55 +30,50 @@ return
 ; 按下 Alt + W/A/S/D 控制鼠标移动方向
 ; 支持加速，松开键停止
 
-; 参数可调
-baseSpeed := 5          ; 初始速度
-acceleration := 10      ; 每次循环速度增加
-sleepTime := 10         ; 循环间隔（毫秒）
-
 ; ↑ W - 向上
 !w::
-speed := baseSpeed
+speed := 5
 Loop {
   if !GetKeyState("w", "P")
     break
   MouseMove, 0, -speed, 0, R
-  Sleep, %sleepTime%
-  speed += acceleration
+  Sleep, 10
+  speed += 10 ; 每次循环距离增加
 }
 return
 
 ; ↓ S - 向下
 !s::
-speed := baseSpeed
+speed := 5
 Loop {
   if !GetKeyState("s", "P")
     break
   MouseMove, 0, speed, 0, R
-  Sleep, %sleepTime%
-  speed += acceleration
+  Sleep, 10
+  speed += 10
 }
 return
 
 ; ← A - 向左
 !a::
-speed := baseSpeed
+speed := 5
 Loop {
   if !GetKeyState("a", "P")
     break
   MouseMove, -speed, 0, 0, R
-  Sleep, %sleepTime%
-  speed += acceleration
+  Sleep, 10
+  speed += 10
 }
 return
 
 ; → D - 向右
 !d::
-speed := baseSpeed
+speed := 5
 Loop {
   if !GetKeyState("d", "P")
     break
   MouseMove, speed, 0, 0, R
-  Sleep, %sleepTime%
-  speed += acceleration
+  Sleep, 10
+  speed += 10
 }
 return

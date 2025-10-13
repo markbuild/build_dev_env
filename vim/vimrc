@@ -139,15 +139,15 @@ augroup unicodeTableMaker
   iabbrev <buffer><silent> tbar. ─▶
   iabbrev <buffer><silent> tbau. ⧋
   iabbrev <buffer><silent> tbad. ⧩
-  iabbrev <buffer><silent> tbco. ☑
+  iabbrev <buffer><silent> tbco. ✅
   iabbrev <buffer><silent> tbem. □
-  iabbrev <buffer><silent> tber. ☒
+  iabbrev <buffer><silent> tber. ❎
 augroup END
 augroup END
 
 augroup html_snippets
   autocmd!
-  autocmd FileType html iabbrev html. <!DOCTYPE html><CR><html><CR><head><CR><meta charset="UTF-8"><CR><meta name="description" content=""><CR><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><CR><meta name="apple-mobile-web-app-capable" content="yes"><CR><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><CR><meta name="apple-touch-fullscreen" content="yes"><CR><meta name="format-detection" content="telephone=no, address=no"><CR><link rel="icon" href="../images/favicon-128.webp" /><CR><link rel="apple-touch-icon" href="../images/favicon-128.webp" /><CR><link rel="stylesheet" type="text/css" href="../stylesheets/common.css"><CR><title><C-R>=substitute(expand('%:t'), '\.html$', '', '')<CR></title><CR><style><CR></style><CR></head><CR><body><CR><div class="copy">Copyright &copy; <C-R>=strftime("%Y")<CR>-<script>document.write(new Date().getFullYear())</script> <a href="https://markbuild.com/" target="_blank">markbuild</a></div><CR></body><CR><script><CR></script><CR></html>
+  autocmd FileType html iabbrev html. <!DOCTYPE html><CR><html><CR><head><CR><meta charset="UTF-8"><CR><meta name="description" content=""><CR><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><CR><meta name="mobile-web-app-capable" content="yes"><CR><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><CR><meta name="apple-touch-fullscreen" content="yes"><CR><meta name="format-detection" content="telephone=no, address=no"><CR><link rel="icon" href="../images/favicon-128.webp" /><CR><link rel="apple-touch-icon" href="../images/favicon-128.webp" /><CR><link rel="stylesheet" type="text/css" href="../stylesheets/common.css"><CR><title><C-R>=substitute(expand('%:t'), '\.html$', '', '')<CR></title><CR><style><CR></style><CR></head><CR><body><CR><div class="copy">Copyright &copy; <C-R>=strftime("%Y")<CR>-<script>document.write(new Date().getFullYear())</script> <a href="https://markbuild.com/" target="_blank">markbuild</a></div><CR></body><CR><script><CR></script><CR></html>
   autocmd FileType html iabbrev nofavicon. <link rel="icon" href="data:,">
   autocmd FileType html iabbrev noindex. <meta name="robots" content="noindex">
 augroup END
