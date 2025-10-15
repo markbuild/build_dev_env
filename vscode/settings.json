@@ -15,5 +15,39 @@
     "vim.useSystemClipboard": true,
     "vim.commands": {
         "e!": "workbench.action.files.revert" // 重新加载文件 :e!命令
-    }
+    },
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [",", "n"],
+            "commands": [
+                {
+                    "command": "editor.action.addSelectionToNextFindMatch",
+                    "args": { "restrictSearchToSelection": false }
+                },
+               "editor.action.clipboardCopyAction",
+                {
+                    "command": "vim.remap",
+                    "args": {
+                         "after": ["<Esc>"]
+                    }
+                },
+                {
+                    "command": "vim.remap",
+                    "args": {
+                         "after": ["/", "<C-r>", "+", "<CR>"] // 模拟输入 / + 粘贴板内容 + 回车
+                    }
+                }
+            ]
+        },
+        {
+            "before": [":", "T", "e"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.view.explorer",
+                    "args": {}
+                }
+            ]
+        }
+    ]
 }
