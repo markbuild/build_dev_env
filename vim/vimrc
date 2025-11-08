@@ -15,6 +15,10 @@ highlight VertSplit ctermbg=gray ctermfg=gray
 " Set indent
 set smartindent
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+" Set 4-space indentation for .py files, default to 2 spaces
+filetype plugin indent on
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
+
 
 " Set Search
 set hlsearch
