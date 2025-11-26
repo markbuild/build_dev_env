@@ -147,7 +147,6 @@ augroup unicodeTableMaker
   iabbrev <buffer><silent> tbem. □
   iabbrev <buffer><silent> tber. ❎
 augroup END
-augroup END
 
 augroup html_snippets
   autocmd!
