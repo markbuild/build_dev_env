@@ -125,6 +125,7 @@ augroup END
 augroup unicodeTableMaker
   autocmd!
   iabbrev <buffer><silent> tbh. ──
+  iabbrev <buffer><silent> tbhr. ──────────────────────────────────────────────────────────────────────────
   iabbrev <buffer><silent> tbv. │
   iabbrev <buffer><silent> tblt. ┌─ 
   iabbrev <buffer><silent> tbltr. ╭─ 
