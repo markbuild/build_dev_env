@@ -5,20 +5,19 @@
 
 set fencs=utf-8,gbk,utf-16,utf-32,ucs-bom
 set nu
+
 " windows clipboard sperate
 set clipboard=unnamed
+
+
+" Set indent
+filetype plugin indent on
+set smartindent
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 set colorcolumn=120 " limited to 120 characters per line
 highlight ColorColumn ctermbg=Red ctermfg=white
 highlight VertSplit ctermbg=gray ctermfg=gray
-
-" Set indent
-set smartindent
-set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-" Set 4-space indentation for .py files, default to 2 spaces
-filetype plugin indent on
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
-
 
 " Set Search
 set hlsearch
@@ -32,6 +31,16 @@ set complete+=k
 
 " Specify the list of storage paths for Vim to generate swap files; if .swp has a name conflict, it becomes .swo, then .swn, then .swm, and then .swl
 set directory=~/.vim/swap/
+
+augroup CleanFormat
+  autocmd!
+
+  " Set 4-space indentation for .py files, default to 2 spaces
+  autocmd FileType python setlocal tabstop=4 shiftwidth=4 expandtab
+
+  " 保存时自动去除行尾空格
+  autocmd BufWritePre * :%s/\s\+$//ge
+augroup END
 
 " Set statusline
 set laststatus=2
@@ -107,12 +116,17 @@ augroup CursorLineOnlyInActiveWindow
   autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline cursorcolumn
   autocmd WinLeave * setlocal nocursorline nocursorcolumn
 augroup END
+
 highlight cursorcolumn cterm=none ctermbg=none ctermfg=none
 highlight cursorline cterm=none ctermbg=none ctermfg=none
 highlight CursorLineNr ctermbg=green ctermfg=black
 
 " Disable syntax highlighting to improve performance
 syntax off
+
+function! RepeatChar(char, n)
+  return repeat(a:char, a:n)
+endfunction
 
 augroup variable
   autocmd!
@@ -125,28 +139,30 @@ augroup END
 augroup unicodeTableMaker
   autocmd!
   iabbrev <buffer><silent> tbh. ──
-  iabbrev <buffer><silent> tbhr. ──────────────────────────────────────────────────────────────────────────
+  iabbrev <buffer><silent> tbhr. <C-R>=RepeatChar("─", 73)<CR>
+  iabbrev <buffer><silent> tbcode. ┌─<C-R>=RepeatChar(" ", 69)<CR>─┐<C-R>=RepeatChar("\r", 3)<CR>└─<C-R>=RepeatChar(" ", 69)<CR>─┘
   iabbrev <buffer><silent> tbv. │
-  iabbrev <buffer><silent> tblt. ┌─ 
-  iabbrev <buffer><silent> tbltr. ╭─ 
-  iabbrev <buffer><silent> tbct. ─┬─ 
+  iabbrev <buffer><silent> tblt. ┌─
+  iabbrev <buffer><silent> tbltr. ╭─
+  iabbrev <buffer><silent> tbct. ─┬─
   iabbrev <buffer><silent> tbrt. ─┐
   iabbrev <buffer><silent> tbrtr. ─╮
-  iabbrev <buffer><silent> tblc. ├─ 
+  iabbrev <buffer><silent> tblc. ├─
   iabbrev <buffer><silent> tbcc. ─┼─
   iabbrev <buffer><silent> tbrc. ─┤
-  iabbrev <buffer><silent> tblb. └─ 
+  iabbrev <buffer><silent> tblb. └─
   iabbrev <buffer><silent> tblbr. ╰─
-  iabbrev <buffer><silent> tbcb. ─┴─ 
+  iabbrev <buffer><silent> tbcb. ─┴─
   iabbrev <buffer><silent> tbrb. ─┘
-  iabbrev <buffer><silent> tbrbr. ─╯ 
+  iabbrev <buffer><silent> tbrbr. ─╯
   iabbrev <buffer><silent> tbal. ◀─
   iabbrev <buffer><silent> tbar. ─▶
   iabbrev <buffer><silent> tbau. ⧋
   iabbrev <buffer><silent> tbad. ⧩
   iabbrev <buffer><silent> tbco. ✅
   iabbrev <buffer><silent> tbem. □
-  iabbrev <buffer><silent> tber. ❎
+  iabbrev <buffer><silent> tber. Ⓧ
+  iabbrev <buffer><silent> tbnode. ◉
 augroup END
 
 augroup html_snippets
@@ -158,11 +174,11 @@ augroup END
 
 :command Gpl !cd %:h;git pull
 
-" Sync file to markbuild 
+" Sync file to markbuild
 :command Mscp !~/Software/mscp %
 
 " Uniq for vimword
-:command Uniq %s/^\(.*\)\n\1$/\1/ 
+:command Uniq %s/^\(.*\)\n\1$/\1/
 command! Wd :windo diffthis
 command! Wo :windo diffoff
 
