@@ -205,3 +205,6 @@ nnoremap <C-W><C-W> <Nop>
 nnoremap <C-h> <C-w><C-h>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-z> <Nop> " stop C-z exit vim without save
+
+inoremap <C-G> <Esc>:.!~/code/git/build_dev_env/vim/vimGenerate.sh<CR>a
+:match WarningMsg /□/
