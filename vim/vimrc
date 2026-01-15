@@ -206,5 +206,24 @@ nnoremap <C-h> <C-w><C-h>
 nnoremap <C-l> <C-w><C-l>
 nnoremap <C-z> <Nop> " stop C-z exit vim without save
 
-inoremap <C-G> <Esc>:.!~/code/git/build_dev_env/vim/vimGenerate.sh<CR>a
+inoremap <C-G> <Esc>:.!~/code/git/build_dev_env/vim/vimGenerate.sh<CR>a<Esc>
 :match WarningMsg /□/
+
+
+"  ╭────────────╮
+"  │  使用说明  │
+"  ╰─────┬──────╯
+"        ⧩
+" ─▶ 使用:find/:edit/:vimgrep
+" :set path=** 搜索:pwd下所有子层，默认只搜索当前层级 path 对:find :edit :vimgrep有效
+" :vimgrep 关键词或正则 **/*.vue 搜索:pwd下所有.vue文件
+" :cn 下一个匹配 :cp 上一个 :copen 列出所有匹配文件 :cclose 关闭
+" tmux.sh直接vim到不含node_modules等依赖的src等目录
+" wildignore 只过滤显示 依然会扫描node_modules下各个文件
+"
+" ─▶ buffer
+" :ls 查看buffer list
+" :b{buffer number} 打开指定buffer
+"
+" ─▶ tab
+" :tabs 显示所有的tabs 在打开tab较多时有用
