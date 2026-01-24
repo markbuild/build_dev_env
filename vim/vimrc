@@ -40,6 +40,11 @@ augroup CleanFormat
 
   " 保存时自动去除行尾空格
   autocmd BufWritePre * :%s/\s\+$//ge
+  autocmd BufWritePre *
+    \ if !empty($vimSessionName) |
+    \   let f = expand("~/.vim/session_" . $vimSessionName . ".vim") |
+    \   execute 'mksession!' f |
+    \ endif
 augroup END
 
 " Set statusline
