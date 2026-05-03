@@ -12,13 +12,15 @@ function cleanGitDiff() {
 
 # 读取剪切板
 function getClipboard(){
-  if [[ "$OSTYPE" == "darwin"* ]]; then
-    # macOS
-    content=$(pbpaste)
-  else
-    # Windows Msys2
-    content=$(powershell -Command "Get-Clipboard" | iconv -f GBK -t UTF-8)
-  fi
+  case "$OSTYPE" in
+    "darwin"*)
+      content=$(pbpaste)
+    ;;
+    *)
+      # Windows Msys2
+      content=$(powershell -Command "Get-Clipboard" | iconv -f GBK -t UTF-8)
+    ;;
+  esac
 
   echo $content
 }

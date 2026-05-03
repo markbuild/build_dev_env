@@ -9,14 +9,15 @@ source $promptDir/func.sh
 case "$1" in
   "comma2excel")
     content=$(getClipboard)
-    python $promptDir/comma2excel.py "$content" | clip
+    # bun $promptDir/comma2excel.js "$content" | iconv -f UTF-8 -t GBK | clip
+    bun $promptDir/comma2excel.js "$content" | pbcopy
     echo "已转化为excel格式并复制到剪切板"
   ;;
   "i18n")
     source $promptDir/genI18n.sh | iconv -f UTF-8 -t GBK | clip
     echo "已生成prompt并复制到剪切板"
   ;;
-  # 代码评审： gf master | prt review
+  # 代码评审： gf master | j review
   "review")
     source $promptDir/codeReview.sh | iconv -f UTF-8 -t GBK | clip
     echo "已生成prompt并复制到剪切板"

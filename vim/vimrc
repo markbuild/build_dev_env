@@ -28,6 +28,7 @@ highlight incsearch ctermfg=white ctermbg=darkred
 " Set completeopt
 "set dictionary+=~/code/git/build_dev_env/vim/vimword,~/code/git/build_dev_env/vim/vimwordphp
 set complete+=k
+set completeopt+=fuzzy " vim9.2  模糊自动补全
 
 " Specify the list of storage paths for Vim to generate swap files; if .swp has a name conflict, it becomes .swo, then .swn, then .swm, and then .swl
 set directory=~/.vim/swap/
@@ -168,6 +169,7 @@ augroup unicodeTableMaker
   iabbrev <buffer><silent> tbem. □
   iabbrev <buffer><silent> tber. Ⓧ
   iabbrev <buffer><silent> tbnode. ◉
+  iabbrev <buffer><silent> tblcnode. ├─◉
 augroup END
 
 augroup html_snippets
@@ -232,3 +234,6 @@ inoremap <C-G> <Esc>:.!~/code/git/build_dev_env/vim/vimGenerate.sh<CR>a<Esc>
 "
 " ─▶ tab
 " :tabs 显示所有的tabs 在打开tab较多时有用
+"
+" ─▶ 分屏
+" ctrl-w 然后按=  平均分配  vsp分屏
