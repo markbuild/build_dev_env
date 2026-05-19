@@ -192,20 +192,15 @@ command! Wo :windo diffoff
 " search current word
 nnoremap ,n :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hlsearch<CR>
 
-" open import
-nnoremap ,O :execute "tabedit" expand("%:p:h") . "/" . expand("<cfile>") . "*"<CR>
-
+" 打开当前文件
 nnoremap ,o :!open %<CR><CR>
-" ,v use vscode open current file
-nnoremap ,v :!code %<CR><CR>
-" nnoremap ,v :!start ~/code.lnk <C-r>=expand('%:p')<CR><CR>
 
+" 打开光标所在URL
 nnoremap ,u :!open <cfile><CR><CR>
+
 nnoremap ,r :source ~/.vimrc<CR>
 nnoremap ,b :cd %:h<CR>:let cmd=":r!git blame -L ".line('.').",".line('.')." -el %:t"<CR>:execute cmd<CR>
 nnoremap ,l :cd %:h<CR>:let cmd=":r!git log -L ".line('.').",".line('.').":%:t"<CR>:execute cmd<CR>
-" nnoremap ,p :set paste<CR>"+p:set nopaste<CR>
-" :map ,y "+y
 
 " disable c-w-w
 nnoremap <C-W><C-W> <Nop>
@@ -237,3 +232,5 @@ inoremap <C-G> <Esc>:.!~/code/git/build_dev_env/vim/vimGenerate.sh<CR>a<Esc>
 "
 " ─▶ 分屏
 " ctrl-w 然后按=  平均分配  vsp分屏
+"
+" ─▶ . 重复上一次的修改操作(删除 缩进 粘贴 insert模式的修改)
