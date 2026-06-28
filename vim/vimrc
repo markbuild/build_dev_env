@@ -149,25 +149,18 @@ augroup unicodeTableMaker
   iabbrev <buffer><silent> tbcode. ┌─<C-R>=RepeatChar(" ", 69)<CR>─┐<C-R>=RepeatChar("\r", 3)<CR>└─<C-R>=RepeatChar(" ", 69)<CR>─┘
   iabbrev <buffer><silent> tbv. │
   iabbrev <buffer><silent> tblt. ┌─
-  iabbrev <buffer><silent> tbltr. ╭─
   iabbrev <buffer><silent> tbct. ─┬─
   iabbrev <buffer><silent> tbrt. ─┐
-  iabbrev <buffer><silent> tbrtr. ─╮
   iabbrev <buffer><silent> tblc. ├─
   iabbrev <buffer><silent> tbcc. ─┼─
   iabbrev <buffer><silent> tbrc. ─┤
   iabbrev <buffer><silent> tblb. └─
-  iabbrev <buffer><silent> tblbr. ╰─
   iabbrev <buffer><silent> tbcb. ─┴─
   iabbrev <buffer><silent> tbrb. ─┘
-  iabbrev <buffer><silent> tbrbr. ─╯
   iabbrev <buffer><silent> tbal. ◀─
   iabbrev <buffer><silent> tbar. ─▶
   iabbrev <buffer><silent> tbau. ⧋
   iabbrev <buffer><silent> tbad. ⧩
-  iabbrev <buffer><silent> tbco. ✅
-  iabbrev <buffer><silent> tbem. □
-  iabbrev <buffer><silent> tber. Ⓧ
   iabbrev <buffer><silent> tbnode. ◉
   iabbrev <buffer><silent> tblcnode. ├─◉
 augroup END
